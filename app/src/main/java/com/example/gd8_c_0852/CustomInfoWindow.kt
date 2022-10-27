@@ -5,16 +5,14 @@ import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
 import org.osmdroid.views.overlay.infowindow.InfoWindow
 
-
-class CustomInfoWindow(mapView: MapView?) :InfoWindow(R.layout.layout_tooltip, mapView) {
+class CustomInfoWindow(mapView: MapView?) : InfoWindow(R.layout.layout_tooltip, mapView) {
     override fun onClose() {
-        TODO("Not yet implemented")
+
     }
 
-    override fun onOpen(item: Any?) {
+    override fun onOpen(item: Any) {
         val marker = item as Marker
-        val infoWindowData= marker.relatedObject as ModelMain
-
+        val infoWindowData = marker.relatedObject as ModelMain
         val tvNamaLokasi = mView.tvNamaLokasi
         val tvAlamat = mView.tvAlamat
         val imageClose = mView.imageClose
